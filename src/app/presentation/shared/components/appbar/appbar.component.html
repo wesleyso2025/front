@@ -1,0 +1,26 @@
+<header>
+  <tui-app-bar>
+    <tui-svg
+      class="sidebar-icon-toggle"
+      tuiSlot="left"
+      (click)="toggle(true)"
+      (tuiActiveZoneChange)="toggle(false)"
+      src="tuiIconMenuLarge"
+    ></tui-svg>
+    <label> TAIGA UI + ANGULAR 17 </label>
+
+    <nav class="sidebar" *tuiSidebar="open">
+      <div class="nav-label flex c-center">
+        <h3>Navigation</h3>
+      </div>
+      <a
+        class="nav-link flex c-center"
+        icon="tuiIconUserLarge"
+        iconAlign="left"
+        routerLink="/action"
+        tuiLink
+        >Action</a
+      >
+    </nav>
+  </tui-app-bar>
+</header>
