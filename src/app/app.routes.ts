@@ -11,7 +11,19 @@ export const routes: Routes = [
         (mod) => mod.ActionComponent
       ),
   },
-  { path: 'carrousel', component: CarrouselComponent },
-  { path: 'accordion', component: AccordionComponent },
+  {
+    path: 'carrousel',
+    loadComponent: () =>
+      import('./presentation/pages/carrousel/carrousel.component').then(
+        (mod) => mod.CarrouselComponent
+      ),
+  },
+  {
+    path: 'accordion',
+    loadComponent: () =>
+      import('./presentation/pages/accordion/accordion.component').then(
+        (mod) => mod.AccordionComponent
+      ),
+  },
   { path: '**', redirectTo: '/accordion', pathMatch: 'full' },
 ];

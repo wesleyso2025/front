@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { TuiAlertService } from '@taiga-ui/core';
+import { TuiActionModule } from '@taiga-ui/kit';
+
 
 @Component({
   selector: 'app-action',
   standalone: true,
-  imports: [],
+  imports: [TuiActionModule],
   templateUrl: './action.component.html',
   styleUrl: './action.component.less',
 })

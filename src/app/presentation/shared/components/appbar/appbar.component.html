@@ -6,21 +6,40 @@
       (click)="toggle(true)"
       (tuiActiveZoneChange)="toggle(false)"
       src="tuiIconMenuLarge"
-    ></tui-svg>
+    >
+      <nav class="sidebar" *tuiSidebar="open">
+          <div class="nav-label flex c-center">
+            <h3>Navigation</h3>
+          </div>
+          <a
+            class="nav-link flex c-center"
+            icon="tuiIconChevronRight"
+            iconAlign="left"
+            routerLink="/action"
+            tuiLink
+            (click)="toggle(false)"
+            >Action</a
+          >
+          <a
+            class="nav-link flex c-center"
+            icon="tuiIconChevronRight"
+            iconAlign="left"
+            routerLink="/carrousel"
+            tuiLink
+            (click)="toggle(false)"
+            >Carrousel</a
+          >
+          <a
+            class="nav-link flex c-center"
+            icon="tuiIconChevronRight"
+            iconAlign="left"
+            routerLink="/accordion"
+            tuiLink
+            (click)="toggle(false)"
+            >Accordion</a
+          >
+        </nav>
+    </tui-svg>
     <label> TAIGA UI + ANGULAR 17 </label>
-
-    <nav class="sidebar" *tuiSidebar="open">
-      <div class="nav-label flex c-center">
-        <h3>Navigation</h3>
-      </div>
-      <a
-        class="nav-link flex c-center"
-        icon="tuiIconUserLarge"
-        iconAlign="left"
-        routerLink="/action"
-        tuiLink
-        >Action</a
-      >
-    </nav>
   </tui-app-bar>
 </header>
