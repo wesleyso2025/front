@@ -1,44 +1,16 @@
-import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
-import {
-  TuiRootModule,
-  TuiDialogModule,
-  TuiAlertModule,
-  TUI_SANITIZER,
-} from '@taiga-ui/core';
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { AppbarComponent } from './presentation/shared/components/appbar/appbar.component';
-import { CarrouselComponent } from './presentation/pages/carrousel/carrousel.component';
-import { CommonModule } from '@angular/common';
-import { TUI_DIALOG_CLOSES_ON_BACK } from '@taiga-ui/cdk';
-import { of } from 'rxjs';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    TuiRootModule,
-    TuiDialogModule,
-    TuiAlertModule,
-    AppbarComponent,
-    CarrouselComponent,
-    RouterLinkActive,
-    RouterLink
-  ],
-  template: `<tui-root>
-    <main class="main-wrapper">
-      <app-appbar></app-appbar>
-      <router-outlet></router-outlet>
-    </main>
-  </tui-root> `,
+  imports: [RouterOutlet,TuiRootModule, TuiDialogModule, TuiAlertModule],
+  templateUrl: './app.component.html',
   styleUrl: './app.component.less',
-  providers: [
-    { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
-    { provide: TUI_DIALOG_CLOSES_ON_BACK, useValue: of(true) },
-  ],
+    providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}]
 })
 export class AppComponent {
-  title = 'JobPortal';
+  title = 'PortalJob';
 }
